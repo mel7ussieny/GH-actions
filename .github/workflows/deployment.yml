@@ -16,13 +16,12 @@ jobs:
         run: npm test
 
   deployment:
+    needs: test
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v3
-
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-
       - name: Deployment
         run: echo "App deployed successfully"
