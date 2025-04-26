@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-	  "tacotruck": "https://github.com/testfiesta/tacotruck.git"
+	  "tacotruck": "git+https://github.com/testfiesta/tacotruck.git"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
