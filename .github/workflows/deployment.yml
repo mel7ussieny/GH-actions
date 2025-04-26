@@ -10,6 +10,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
+      - name: Configure GitHub Auth Token
+        run: git config --global url."https://${{ secrets.NPM_TOKEN }}@github.com/".insteadOf ssh://git@
       - name: Install dependencies
         run: npm ci
       - name: Run test
