@@ -13,10 +13,7 @@ jobs:
       - name: Configure Git to Use HTTPS
         run: |
           git config --global url."https://github.com/".insteadOf git@github.com:
-          git config --global url."https://".insteadOf ssh://git@
-      - name: Configure npm Auth Token
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          git config --global url."https://${{ secrets.NPM_TOKEN }}@github.com/".insteadOf ssh://git@
       - name: Install dependencies
         run: npm ci
       - name: Run test
